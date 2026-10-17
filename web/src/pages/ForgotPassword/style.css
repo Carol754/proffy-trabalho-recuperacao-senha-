@@ -1,0 +1,340 @@
+#page-forgot-password {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+}
+
+#page-forgot-password .forgot-content {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+#page-forgot-password .forgot-content:has(.success-icon) {
+   background: #8257e5;
+   justify-content: center;
+   align-items: center;
+}
+
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-form {
+   width: 100%;
+   min-height: 100vh;
+   background: transparent;
+   align-items: center;
+   text-align: center;
+   padding: 40px;
+}
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-brand {
+   display: none;
+}
+
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-form {
+   width: 100%;
+   min-height: 100vh;
+   background: transparent;
+   align-items: center;
+   text-align: center;
+   padding: 40px;
+}
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-brand {
+   display: none;
+}
+
+#page-forgot-password .forgot-form {
+
+    width: 50%;
+
+    min-height: 100vh;
+
+    background: #f0f0f7;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+}
+
+#page-forgot-password .forgot-form h1 {
+
+    color: #32264d;
+
+    font-size: 36px;
+
+    max-width: 350px;
+
+    margin: 0 0 16px;
+
+}
+
+#page-forgot-password .forgot-form p {
+
+    color: #6a6180;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin: 0 0 32px;
+
+}
+
+#page-forgot-password .back-link {
+
+    position: absolute;
+
+    top: 32px;
+
+    left: 80px;
+
+    color: #8257e5;
+
+    font-size: 28px;
+
+    text-decoration: none;
+
+}
+
+#page-forgot-password .back-link:hover {
+
+    color: #6842c2;
+
+}
+
+#page-forgot-password .forgot-form form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    max-width: 400px;
+
+}
+
+#page-forgot-password .forgot-form input {
+
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e6e6f0;
+
+    border-radius: 8px;
+
+    background: #fafafc;
+
+    color: #6a6180;
+
+    font-size: 14px;
+
+    outline: none;
+
+    margin-bottom: 16px;
+
+}
+
+#page-forgot-password .forgot-form input:focus {
+
+    border-color: #8257e5;
+
+}
+
+#page-forgot-password .forgot-form button {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    min-height: 56px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #04d361;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+
+}
+
+#page-forgot-password .forgot-form button:hover {
+
+    background: #04bf58;
+
+}
+
+#page-forgot-password .forgot-brand {
+
+    width: 50%;
+
+    min-height: 100vh;
+
+    padding: 80px;
+
+    box-sizing: border-box;
+
+    background: #8257e5;
+
+    color: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+#page-forgot-password .forgot-brand h1 {
+
+    font-size: 64px;
+
+    margin: 0 0 8px;
+
+}
+
+#page-forgot-password .forgot-brand p {
+
+    font-size: 24px;
+
+    line-height: 1.4;
+
+    max-width: 250px;
+
+    margin: 0;
+
+}
+
+#page-forgot-password .success-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    box-sizing: border-box;
+
+    border: 4px solid #04d361;
+
+    border-radius: 16px;
+
+    color: #04d361;
+
+    font-size: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 32px;
+
+}
+
+@media (max-width: 700px) {
+
+    #page-forgot-password .forgot-content {
+
+        flex-direction: column;
+
+    }
+
+    #page-forgot-password .forgot-form,
+
+    #page-forgot-password .forgot-brand {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 40px 24px;
+
+    }
+
+    #page-forgot-password .forgot-form {
+
+        min-height: 60vh;
+
+        padding-top: 80px;
+
+    }
+
+    #page-forgot-password .forgot-brand {
+
+        min-height: 30vh;
+
+    }
+
+    #page-forgot-password .forgot-brand h1 {
+
+        font-size: 42px;
+
+    }
+
+    #page-forgot-password .forgot-brand p {
+
+        font-size: 18px;
+
+    }
+
+    #page-forgot-password .back-link {
+
+        top: 24px;
+
+        left: 24px;
+
+    }
+
+    #page-forgot-password .forgot-form h1 {
+
+        font-size: 30px;
+
+    }
+
+}
+
+/* Ajustes da tela de sucesso */
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-form h1 {
+   color: #ffffff;
+   max-width: 600px;
+   font-size: 32px;
+   text-align: center;
+}
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-form p {
+   color: #e6e0f5;
+   max-width: 500px;
+   text-align: center;
+}
+#page-forgot-password .forgot-content:has(.success-icon) .success-icon {
+   margin-bottom: 24px;
+}
+#page-forgot-password .forgot-content:has(.success-icon) .forgot-form button {
+   max-width: 220px;
+}

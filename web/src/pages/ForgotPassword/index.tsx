@@ -1,0 +1,140 @@
+import React, { useState } from 'react';
+
+import { Link, useHistory } from 'react-router-dom';
+
+import './style.css';
+
+function ForgotPassword() {
+
+    const [email, setEmail] = useState('');
+
+    const [sent, setSent] = useState(false);
+
+    const history = useHistory();
+
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+
+        event.preventDefault();
+
+        const normalizedEmail = email.trim();
+
+        if (!normalizedEmail) {
+
+            alert('Por favor, informe seu e-mail.');
+
+            return;
+
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(normalizedEmail)) {
+
+            alert('Informe um e-mail válido.');
+
+            return;
+
+        }
+
+        setSent(true);
+
+    }
+
+    return (
+<div id="page-forgot-password">
+<div className="forgot-content">
+<div className="forgot-form">
+
+                    {!sent ? (
+<>
+<Link
+
+                                to="/"
+
+                                className="back-link"
+
+                                aria-label="Voltar para o login"
+>
+
+                                ←
+</Link>
+<h1>Eita, esqueceu sua senha?</h1>
+<p>
+
+                                Não esquenta, vamos dar um jeito nisso.
+</p>
+<form onSubmit={handleSubmit}>
+<input
+
+                                    type="email"
+
+                                    placeholder="E-mail"
+
+                                    aria-label="E-mail"
+
+                                    value={email}
+
+                                    onChange={(event) =>
+
+                                        setEmail(event.target.value)
+
+                                    }
+
+                                    required
+
+                                />
+<button type="submit">
+
+                                    Enviar
+</button>
+</form>
+</>
+
+                    ) : (
+<>
+<div
+
+                                className="success-icon"
+
+                                aria-hidden="true"
+>
+
+                                ✓
+</div>
+<h1>Redefinição enviada!</h1>
+<p>
+
+                                Boa, agora é só checar o e-mail que foi
+
+                                enviado para você redefinir sua senha
+
+                                e aproveitar os estudos.
+</p>
+<button
+
+                                type="button"
+
+                                onClick={() => history.push('/')}
+>
+
+                                Voltar ao login
+</button>
+</>
+
+                    )}
+</div>
+<div className="forgot-brand">
+<h1>Proffy</h1>
+<p>
+
+                        Sua plataforma de estudos online.
+</p>
+</div>
+</div>
+</div>
+
+    );
+
+}
+
+export default ForgotPassword;
