@@ -16,36 +16,6 @@
 
 }
 
-#page-forgot-password .forgot-content:has(.success-icon) {
-   background: #8257e5;
-   justify-content: center;
-   align-items: center;
-}
-
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-form {
-   width: 100%;
-   min-height: 100vh;
-   background: transparent;
-   align-items: center;
-   text-align: center;
-   padding: 40px;
-}
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-brand {
-   display: none;
-}
-
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-form {
-   width: 100%;
-   min-height: 100vh;
-   background: transparent;
-   align-items: center;
-   text-align: center;
-   padding: 40px;
-}
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-brand {
-   display: none;
-}
-
 #page-forgot-password .forgot-form {
 
     width: 50%;
@@ -232,6 +202,8 @@
 
 }
 
+/* Ícone de confirmação */
+
 #page-forgot-password .success-icon {
 
     width: 64px;
@@ -254,19 +226,75 @@
 
     justify-content: center;
 
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+
+}
+
+/* Tela de confirmação */
+
+#page-forgot-password .success-content {
+
+    background: #8257e5;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+#page-forgot-password .success-form {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: transparent;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 24px;
+
+}
+
+#page-forgot-password .success-form h1 {
+
+    color: #ffffff;
+
+    max-width: 600px;
+
+    font-size: 32px;
+
+    text-align: center;
+
+}
+
+#page-forgot-password .success-form p {
+
+    color: #e6e0f5;
+
+    max-width: 500px;
+
+    text-align: center;
+
+}
+
+#page-forgot-password .success-form button {
+
+    max-width: 220px;
 
 }
 
 @media (max-width: 700px) {
 
-    #page-forgot-password .forgot-content {
+    #page-forgot-password .forgot-content:not(.success-content) {
 
         flex-direction: column;
 
     }
 
-    #page-forgot-password .forgot-form,
+    #page-forgot-password .forgot-form:not(.success-form),
 
     #page-forgot-password .forgot-brand {
 
@@ -278,7 +306,7 @@
 
     }
 
-    #page-forgot-password .forgot-form {
+    #page-forgot-password .forgot-form:not(.success-form) {
 
         min-height: 60vh;
 
@@ -318,23 +346,11 @@
 
     }
 
-}
+    #page-forgot-password .success-form h1 {
 
-/* Ajustes da tela de sucesso */
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-form h1 {
-   color: #ffffff;
-   max-width: 600px;
-   font-size: 32px;
-   text-align: center;
+        font-size: 30px;
+
+    }
+
 }
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-form p {
-   color: #e6e0f5;
-   max-width: 500px;
-   text-align: center;
-}
-#page-forgot-password .forgot-content:has(.success-icon) .success-icon {
-   margin-bottom: 24px;
-}
-#page-forgot-password .forgot-content:has(.success-icon) .forgot-form button {
-   max-width: 220px;
-}
+ 

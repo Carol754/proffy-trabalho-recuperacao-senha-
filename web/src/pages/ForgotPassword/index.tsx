@@ -18,6 +18,8 @@ function ForgotPassword() {
 
         const normalizedEmail = email.trim();
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (!normalizedEmail) {
 
             alert('Por favor, informe seu e-mail.');
@@ -25,8 +27,6 @@ function ForgotPassword() {
             return;
 
         }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(normalizedEmail)) {
 
@@ -36,7 +36,45 @@ function ForgotPassword() {
 
         }
 
+        // Demonstração da tela de confirmação.
+
+        // O envio real de e-mail ainda precisa de integração com o servidor.
+
         setSent(true);
+
+    }
+
+    if (sent) {
+
+        return (
+<div id="page-forgot-password">
+<div className="forgot-content success-content">
+<div className="forgot-form success-form">
+<div className="success-icon" aria-hidden="true">
+
+                            ✓
+</div>
+<h1>Redefinição enviada!</h1>
+<p>
+
+                            Boa, agora é só checar o e-mail que foi enviado
+
+                            para você redefinir sua senha e aproveitar os estudos.
+</p>
+<button
+
+                            type="button"
+
+                            onClick={() => history.push('/')}
+>
+
+                            Voltar ao login
+</button>
+</div>
+</div>
+</div>
+
+        );
 
     }
 
@@ -44,91 +82,51 @@ function ForgotPassword() {
 <div id="page-forgot-password">
 <div className="forgot-content">
 <div className="forgot-form">
-
-                    {!sent ? (
-<>
 <Link
 
-                                to="/"
+                        to="/"
 
-                                className="back-link"
+                        className="back-link"
 
-                                aria-label="Voltar para o login"
+                        aria-label="Voltar"
 >
 
-                                ←
+                        ←
 </Link>
 <h1>Eita, esqueceu sua senha?</h1>
 <p>
 
-                                Não esquenta, vamos dar um jeito nisso.
+                        Não esquenta, vamos dar um jeito nisso.
 </p>
 <form onSubmit={handleSubmit}>
 <input
 
-                                    type="email"
+                            type="email"
 
-                                    placeholder="E-mail"
+                            placeholder="E-mail"
 
-                                    aria-label="E-mail"
+                            aria-label="E-mail"
 
-                                    value={email}
+                            value={email}
 
-                                    onChange={(event) =>
+                            onChange={(event) =>
 
-                                        setEmail(event.target.value)
+                                setEmail(event.target.value)
 
-                                    }
+                            }
 
-                                    required
+                            required
 
-                                />
+                        />
 <button type="submit">
 
-                                    Enviar
+                            Enviar
 </button>
 </form>
-</>
-
-                    ) : (
-<>
-<div
-
-                                className="success-icon"
-
-                                aria-hidden="true"
->
-
-                                ✓
-</div>
-<h1>Redefinição enviada!</h1>
-<p>
-
-                                Boa, agora é só checar o e-mail que foi
-
-                                enviado para você redefinir sua senha
-
-                                e aproveitar os estudos.
-</p>
-<button
-
-                                type="button"
-
-                                onClick={() => history.push('/')}
->
-
-                                Voltar ao login
-</button>
-</>
-
-                    )}
 </div>
 <div className="forgot-brand">
 <h1>Proffy</h1>
-<p>
-
-                        Sua plataforma de estudos online.
-</p>
+<p>Sua plataforma de estudos online.</p>
 </div>
 </div>
 </div>
@@ -138,3 +136,4 @@ function ForgotPassword() {
 }
 
 export default ForgotPassword;
+ 
